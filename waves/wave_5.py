@@ -1,4 +1,4 @@
-wave_5_composition = {
+composition = {
     "Infantry" : 6,
     "Medic" : 1,
     "Saboteur" : 3,

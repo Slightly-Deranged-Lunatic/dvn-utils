@@ -1,4 +1,4 @@
-wave_4_composition = {
+composition = {
     "Infantry" : 7,
     "Sniper" : 2,
     "Gunner" : 1,

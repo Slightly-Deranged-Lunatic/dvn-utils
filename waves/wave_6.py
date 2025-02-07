@@ -1,4 +1,4 @@
-wave_6_composition = {
+composition = {
     "Infantry" : 8,
     "Shielder" : 4,
     "Ranger" : 3,
@@ -9,6 +9,5 @@ wave_6_composition = {
     "Medic" : 0.5,
     "Engineer" : 0.5,
     "Grenadier" : 0.5,
-
     "Boss" : 2,
 }

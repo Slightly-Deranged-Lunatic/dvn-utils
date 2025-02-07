@@ -1,6 +1,8 @@
 import importlib
+import sys
 import os
-ORIGINAL_WORKIND_DIRECTORY = os.getcwd()
+import math
+ORIGINAL_WORKING_DIRECTORY = os.getcwd()
 def main():
     while True:
         try:
@@ -37,9 +39,16 @@ def main():
                     print("Your unit multiplier wasn't a whole number or floating point")
                     continue
                 break
+            break
         else:
             print("What you wanted to provide wasn't an option.")
     os.chdir("waves")
-    importlib.import_module(f"wave_{wave_to_output}")
-    os.chdir(ORIGINAL_WORKIND_DIRECTORY)
+    sys.path.append(os.getcwd())
+    wave_composition = importlib.import_module(f"wave_{wave_to_output}")
+    os.chdir(ORIGINAL_WORKING_DIRECTORY)
+    for unit, unit_count in wave_composition.composition.items():
+        if unit == "Boss" or unit == "Ares":
+            print(f"{unit} x {unit_count}")
+            continue
+        print(f"{unit} x {math.ceil(unit_count * unit_multiplier_as_multiplier)}")
 main()
