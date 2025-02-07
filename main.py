@@ -1,4 +1,6 @@
 import importlib
+import os
+ORIGINAL_WORKIND_DIRECTORY = os.getcwd()
 def main():
     while True:
         try:
@@ -37,5 +39,7 @@ def main():
                 break
         else:
             print("What you wanted to provide wasn't an option.")
-    print("meow")
+    os.chdir("waves")
+    importlib.import_module(f"wave_{wave_to_output}")
+    os.chdir(ORIGINAL_WORKIND_DIRECTORY)
 main()
