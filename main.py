@@ -3,6 +3,7 @@ import sys
 import os
 import math
 ORIGINAL_WORKING_DIRECTORY = os.getcwd()
+
 def main():
     while True:
         try:
@@ -46,9 +47,19 @@ def main():
     sys.path.append(os.getcwd())
     wave_composition = importlib.import_module(f"wave_{wave_to_output}")
     os.chdir(ORIGINAL_WORKING_DIRECTORY)
+    total_unit_count = 0
     for unit, unit_count in wave_composition.composition.items():
         if unit == "Boss" or unit == "Ares":
+            if unit == "Boss":
+                total_unit_count += 9
+            else:
+                total_unit_count += 1
             print(f"{unit} x {unit_count}")
             continue
-        print(f"{unit} x {math.ceil(unit_count * unit_multiplier_as_multiplier)}")
-main()
+        unit_count = math.ceil(unit_count * unit_multiplier_as_multiplier)
+        total_unit_count += unit_count
+        print(f"{unit} x {unit_count}")
+    print(f"Total units: {total_unit_count}")
+
+if __name__ == "__main__":
+    main()
