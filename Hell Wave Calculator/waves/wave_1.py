@@ -4,4 +4,4 @@ composition = {
     "Shielder" : 5,
     "Sniper" : 1,
     "Saboteur" : 2,
-}
+} 

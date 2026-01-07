@@ -1,2 +1,7 @@
-A python script that will output a given hell wave in the roblox game Dummies vs Noobs when given a player count or unit multiplier.
+A collection of small probably useful scripts for the ROBLOX game Dummies vs Noobs
+Take a look around.
+# Currently Supported Features
+- Calculating the amount of enemies in a given hell wave (probably using an old composition but I don't care </3)
+- Calculating how much EXP to get to a certain level from another
+
 This repo is currently not accepting contributions at the moment, sorry!
