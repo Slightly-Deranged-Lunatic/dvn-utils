@@ -1,10 +1,18 @@
 import outfits_cost
-from string import capwords
-master_outfits_dict = outfits_cost.outfits
+outfits = outfits_cost.outfits
 
+<<<<<<< HEAD:points_to_levels.py/points_to_levels.py
 def points_to_levels():
+=======
+def main():
+    OUTFITS_SUM = sum(outfits.values())
+>>>>>>> parent of 506c1a0 (Let the user input outfits they have just in case they don't have every outfit.):Points To Levels/main.py
     USER_POINTS, HAS_ALL_OUTFITS = get_user_input()
-    total_points = find_total_points(USER_POINTS, HAS_ALL_OUTFITS)
+    if HAS_ALL_OUTFITS == "yes":
+        total_points = USER_POINTS + OUTFITS_SUM
+    else:
+        total_points = USER_POINTS
+
     level = 1
     print(f"Total points before looping is {total_points}")
     while True:
@@ -36,37 +44,6 @@ def get_user_input():
         except ValueError:
             print("Please only input yes or no.")
     return USER_POINTS, HAS_ALL_OUTFITS
-
-def find_total_points(USER_POINTS, HAS_ALL_OUTFITS):
-    # Gets a list of outfits the user owns if they don't have every outfit and calculates the total points
-    total_points = 0
-    if HAS_ALL_OUTFITS == "no":
-        OUTFIT_HELP_MESSAGE = """
-        We're going to enter the name of every outfit you have one by one now,
-        Please type in the outfit name as it appears in the outfit inventory.
-        When you are done typing in your outfits please type 'done'
-        You can also type 'done' to skip this but doing so will give you an inaccurate level
-        """
-        print(OUTFIT_HELP_MESSAGE)
-        outfit_inventory = []
-        while True:
-            current_outfit = capwords(input("Please input an outfit: "))
-            if current_outfit == "Done":
-                break
-            if current_outfit not in master_outfits_dict:
-                print(f"Could not find {current_outfit}, did you make a typo? ")
-                continue
-            if current_outfit in outfit_inventory:
-                print("You already typed that one.")
-                continue
-            outfit_inventory.append(current_outfit)
-    else:
-        outfit_inventory = master_outfits_dict.keys()
-    
-    for outfit in outfit_inventory:
-        total_points += master_outfits_dict[outfit]
-    total_points += USER_POINTS
-    return total_points
 
 if __name__ == "__main__":
     points_to_levels()

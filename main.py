@@ -1,3 +1,5 @@
+import exp_calculator.exp_calculator as EXPC
+EXPC.exp_calculator()
 def main():
     pass
 
