@@ -2,7 +2,7 @@ import importlib
 import sys
 import math
 
-def main():
+def hell_wave_calculator():
     wave_composition = get_wave()
     while True:
         player_count_or_multiplier = input('Are you going to give a player count or unit multiplier? Type "player count" for player count, and "unit multiplier" for unit multiplier. ')
@@ -75,4 +75,4 @@ def print_wave_comp(unit_multiplier, wave_composition):
     print(f"Total units: {total_unit_count}")
 
 if __name__ == "__main__":
-    main()
+    hell_wave_calculator()

@@ -2,7 +2,7 @@ import outfits_cost
 from string import capwords
 master_outfits_dict = outfits_cost.outfits
 
-def main():
+def points_to_levels():
     USER_POINTS, HAS_ALL_OUTFITS = get_user_input()
     total_points = find_total_points(USER_POINTS, HAS_ALL_OUTFITS)
     level = 1
@@ -69,4 +69,4 @@ def find_total_points(USER_POINTS, HAS_ALL_OUTFITS):
     return total_points
 
 if __name__ == "__main__":
-    main()
+    points_to_levels()

@@ -1,4 +1,4 @@
-def main():
+def exp_calculator():
     STARTING_LEVEL, ENDING_LEVEL = get_levels()
     EXP_SUM = 0
     for i in range(STARTING_LEVEL, ENDING_LEVEL):
@@ -25,4 +25,4 @@ def get_levels():
     return STARTING_LEVEL, ENDING_LEVEL
 
 if __name__ == "__main__":
-    main()
+    exp_calculator()
