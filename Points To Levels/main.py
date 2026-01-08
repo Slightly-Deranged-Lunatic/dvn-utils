@@ -13,9 +13,7 @@ def main():
     print(f"Total points before looping is {total_points}")
     while True:
         level += 1
-        print(f"Current level is {level}")
         total_points -= level * 2
-        print(f"Total points is {total_points}")
         if total_points <= 0:
             level -= 1
             total_points += level * 2
