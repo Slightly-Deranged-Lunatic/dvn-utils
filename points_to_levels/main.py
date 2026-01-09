@@ -2,9 +2,11 @@ import json
 from string import capwords
 import os
 
+OWD = os.getcwd()
 os.chdir("points_to_levels")
 with open("outfits_cost.json") as data:
     master_outfits_dict = json.load(data)
+os.chdir(OWD)
 
 def main():
     USER_POINTS, HAS_ALL_OUTFITS = get_user_input()

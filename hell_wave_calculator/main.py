@@ -1,6 +1,6 @@
-import importlib
-import sys
 import math
+import json
+import os
 
 def main():
     wave_composition = get_wave()
@@ -15,7 +15,6 @@ def main():
         else:
             print("What you provided wasn't an option.")
             continue
-        break
     print_wave_comp(unit_multiplier, wave_composition)
 
 def input_to_multiplier():
@@ -40,8 +39,13 @@ def get_wave():
             print("Your wave has to be a whole number between 1 and 11.")
             continue
         break
-    sys.path.append("waves")
-    wave_composition = importlib.import_module(f"wave_{wave_to_output}")
+
+    OWD = os.getcwd()
+    os.chdir("hell_wave_calculator")
+    with open("waves.json") as wave_data:
+        waves = json.load(wave_data)
+        wave_composition = waves[f"Wave {wave_to_output}"]
+    os.chdir(OWD)
     return wave_composition
 
 def player_count_to_multiplier():
@@ -61,7 +65,7 @@ def player_count_to_multiplier():
 def print_wave_comp(unit_multiplier, wave_composition):
     # Prints the wave composition and total amount of units after accounting for unit multiplier
     total_unit_count = 0
-    for unit, unit_count in wave_composition.composition.items():
+    for unit, unit_count in wave_composition.items():
         if unit == "Boss" or unit == "Ares":
             if unit == "Boss":
                 total_unit_count += 9
