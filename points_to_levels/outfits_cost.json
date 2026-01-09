@@ -1,4 +1,4 @@
-outfits = {
+{
     "Acolyte" : 50,
     "Aero-tropper 1" : 50,
     "Aero-tropper 2" : 30,
@@ -194,5 +194,5 @@ outfits = {
     "Woodland 2" : 40,
     "Woodland 3" : 40,
     "Woodland 4" : 40,
-    "Woodland 5" : 30,
+    "Woodland 5" : 30
 }
