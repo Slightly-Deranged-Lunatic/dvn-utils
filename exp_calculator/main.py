@@ -4,6 +4,7 @@ def main():
     for i in range(STARTING_LEVEL, ENDING_LEVEL):
          EXP_SUM += i*1000
     print(f"The total amount of EXP to go from {STARTING_LEVEL} to {ENDING_LEVEL} is {EXP_SUM}.")
+    input("Press enter to close")
 
 def get_levels():
     while True:

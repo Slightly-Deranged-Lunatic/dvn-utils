@@ -20,7 +20,7 @@ def main():
             total_points += level * 2
             break
     print(f"Your level given your points would be {level} with {total_points} points leftover.")
-
+    input("Press enter to close")
 def get_user_input():
     # Returns all the user input the program needs.
     # In a function to sort of hide it away from all the code because input validation is gross

@@ -16,6 +16,7 @@ def main():
             print("What you provided wasn't an option.")
             continue
     print_wave_comp(unit_multiplier, wave_composition)
+    input("Press enter to close")
 
 def input_to_multiplier():
     # Lets the user define a multiplier themselves
